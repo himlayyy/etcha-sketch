@@ -3,9 +3,9 @@ let gridContainer = document.querySelector(".grid-container");
 let slider = document.querySelector("#slider");
 let sliderDisplay = document.querySelector("#slider-display");
 
-sliderDisplay.innerHTML = slider.value;
+sliderDisplay.innerHTML = `${slider.value} x ${slider.value}`;
 slider.addEventListener("input", () => {
-    sliderDisplay.innerHTML = slider.value;
+    sliderDisplay.innerHTML =  `${slider.value} x ${slider.value}`;
     clearing(slider.value);
 })
 
@@ -15,7 +15,9 @@ let color = colorPicker.addEventListener("input", () => console.log(colorPicker.
 function randomColor() {
     return "#" + Math.floor(Math.random() * 16777215).toString(16)
 };
-
+function palette(){
+    console.log("palette");
+}
 function clearing(cells = 32) {
     gridContainer.querySelectorAll(".pixel").forEach(pixel => pixel.remove());
     slider.value = cells;
